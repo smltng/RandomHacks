@@ -17,3 +17,10 @@
 	border:1px solid blue;
 	float:left;
 }
+
+
+/*post.html*/
+#description{
+	width: 300px;
+	resize:none;
+}
