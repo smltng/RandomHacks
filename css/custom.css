@@ -1,8 +1,9 @@
 #main{
-	
+	width:1000px;
+	margin-left:auto;
+	margin-right:auto;
 }
 #mainFeed{
-	border-right:1px solid gray;
 }
 #filters{
 	height:300px;
@@ -11,4 +12,37 @@
 #description{
 	width: 300px;
 	resize:none;
+}
+
+.container-fluid:first-child{
+	background-color:#B31B1B;
+}
+
+.navbar-default .navbar-brand{
+	color:whitesmoke;
+}
+
+.navbar-default .navbar-brand:hover{
+	color:#ddd;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color:whitesmoke;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+	color:#ddd;
+}
+
+.complaint{
+	border-bottom:1px solid gray;
+	height:50px;
+}
+.complaint-left{
+	width:400px;
+	float:left;
+}
+.complaint-right{
+	width:200px;
+	float:right;
 }
