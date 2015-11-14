@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.js"></script>
+  <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
 </head>
 <body>
 
@@ -35,22 +36,34 @@
 
 <div id="main" class="container-fluid">
   <div class="row">
-    <form id="complaintForm" action="" method="post">
       Subject:<br />
       <input id="subject" type="text" placeholder="What's on your mind?"></input><br />
       Category:<br />
       <select id="category">
-        <option value="dining">Dining</option>
-        <option value="atlarge">At Large</option>
-        <option value="residential">Residential Life</option>
+        <option value="Dining">Dining</option>
+        <option value="Environmental Policy and Learning">Environmental Policy and Learning</option>
+        <option value="Diversity">Diversity</option>
+        <option value="Communications and Outreach">Communications and Outreach</option>
+        <option value="Appropriations">Appropriations</option>
+        <option value="Financial Aid">Financial Aid</option>
+        <option value="Technology">Technology</option>
+        <option value="Residential Life">Residential Life</option>
+        <option value="Student Assembly Infrastructure Fund">Student Assembly Infrastructure Fund</option>
+        <option value="Health and Wellness">Health and Wellness</option>
+        <option value="City/Local Affairs">City/Local Affairs</option>
+        <option value="Academic Policy">Academic Policy</option>
+        <option value="Elections">Elections</option>
+        <option value="Other">Other</option>
       </select><br />
       Description:<br />
       <textarea id="description" placeholder="Please describe your problem."></textarea><br />
       Anonymous? <input type="checkbox" name="anon" value="anon" id="anon"><br />
-      <input id="submit" type="submit"></input>
-    </form>
+      <button id="submit" >Submit</button>
+    
   </div>
 </div>
+
+<script src="js/submitcomplaint.js"></script>
 </body>
 </html>
 
