@@ -2,15 +2,25 @@
 <html>
 <head>
 	<title></title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  
   <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
-  <script>
-    Parse.initialize("z9ajnPiKmHIXc05vn7bojsGlH1gRVBIElbF0XcgU", "s8EsAA7ZNUab0UYTCYDOP20LylqYaKeaTyAFdsKm");
-  </script>
 </head>
 <body>
 	
+  <div id="main">
+    <p>works</p>
+  </div>
+
   <input type="text" id="name">
   <button type="submit" id="btn-submit">Submit</button>
+
+  
+  <script>
+    Parse.initialize("z9ajnPiKmHIXc05vn7bojsGlH1gRVBIElbF0XcgU", "s8EsAA7ZNUab0UYTCYDOP20LylqYaKeaTyAFdsKm");
+  </script>
 
   <script>
     var btnSubmit = document.getElementById('btn-submit');
@@ -37,6 +47,6 @@
     }  
   </script>
 
-
 </body>
 </html>
+
