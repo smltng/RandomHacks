@@ -14,3 +14,23 @@
 	width: 300px;
 	resize:none;
 }
+
+.container-fluid:first-child{
+	background-color:#B31B1B;
+}
+
+.navbar-default .navbar-brand{
+	color:whitesmoke;
+}
+
+.navbar-default .navbar-brand:hover{
+	color:#ddd;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color:whitesmoke;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+	color:#ddd;
+}
