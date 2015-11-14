@@ -1,25 +1,13 @@
 #main{
-	width:1126px;
-	height:600px;
-	border:1px solid black;
-	margin-left:auto;
-	margin-right:auto;
-}
-#filters{
-	width:200px;
-	height:200px;
-	border:1px solid red;
-	float:left;
+	
 }
 #mainFeed{
-	width:800px;
-	height:500px;
-	border:1px solid blue;
-	float:left;
+	border-right:1px solid gray;
 }
-
-
-/*post.html*/
+#filters{
+	height:300px;
+	background-color:#F2F2F2;
+}
 #description{
 	width: 300px;
 	resize:none;
