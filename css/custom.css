@@ -4,7 +4,6 @@
 	margin-right:auto;
 }
 #mainFeed{
-	border-right:1px solid gray;
 }
 #filters{
 	height:300px;
@@ -33,4 +32,17 @@
 
 .navbar-default .navbar-nav>li>a:hover{
 	color:#ddd;
+}
+
+.complaint{
+	border-bottom:1px solid gray;
+	height:50px;
+}
+.complaint-left{
+	width:400px;
+	float:left;
+}
+.complaint-right{
+	width:200px;
+	float:right;
 }
