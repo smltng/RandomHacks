@@ -7,7 +7,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.js"></script>
   
-  <script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
+  <script src="https://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
 </head>
 <body>
 	
@@ -36,12 +36,21 @@
 
 <div id="main" class="container-fluid">
 	<div class="row">
+		<!--commplaints-->
 		<div id="mainFeed" class="col-sm-8" >
-			<h3>main feed</h3>
-			<div>
-				<a href="view.html">Example Complaint subject</a>
+			<h2>main feed</h2>
+			<div class = "complaint">
+				<div class = "complaint-left">
+					<a href="view.html">Complaint Subject</a>
+					<p>"Extract first 50 characters..."</p>
+				</div>
+				<div class = "complaint-right">
+					<p>Submitted on: 'date'
+					<br>Status: 'status'</p>
+				</div>
 			</div>
 		</div>
+		<!--filters-->
 		<div class="col-sm-3">
 			<div id="filters">
 				<form class="navbar-form navbar-left" role="search">

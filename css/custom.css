@@ -4,7 +4,6 @@
 	margin-right:auto;
 }
 #mainFeed{
-	border-right:1px solid gray;
 }
 #filters{
 	height:300px;
@@ -13,4 +12,16 @@
 #description{
 	width: 300px;
 	resize:none;
+}
+.complaint{
+	border-bottom:1px solid gray;
+	height:50px;
+}
+.complaint-left{
+	width:400px;
+	float:left;
+}
+.complaint-right{
+	width:200px;
+	float:right;
 }
