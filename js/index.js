@@ -25,13 +25,25 @@ function appendComplaints() {
         var month = arrDate[1];
         var date = arrDate[2];
         var year = arrDate[3];
-
+		var subject;
+		if (object.get('subject').length > 60){
+			subject = object.get('subject').substring(0,60) + '...'; 
+		}else{
+			subject = object.get('subject');
+		}
+		var description;
+		if (object.get('description').length > 60){
+			description = object.get('description').substring(0,60) + '...'; 
+		}else{
+			description = object.get('description');
+		}
+		
         // create complaint DOM 
-        listContainer.append(
+        listContainer.prepend(
           '<div class="complaint">' +
             '<div class = "complaint-left">' +
-              '<a href="view.html" data-id="' +objectId+ '">' + object.get('subject') + '</a>' +
-              '<p>' + object.get('description') + '</p>' +
+              '<a href="view.html" data-id="' +objectId+ '">' + subject + '</a>' +
+              '<p>' + description + '</p>' +
             '</div>' +
             '<div class = "complaint-right">' +
               '<p>Submitted on: ' + month + ' ' + date + ', ' + year +

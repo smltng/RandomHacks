@@ -36,14 +36,16 @@ function submitComplaint() {
   complaintObj.save(null, {
     success: function(complaintObj) {
       // Execute any logic that should take place after the object is saved.
-      alert('New object created with objectId: ' + complaintObj.id);
+      // alert('New object created with objectId: ' + complaintObj.id);
     },
     error: function(complaintObj, error) {
       // Execute any logic that should take place if the save fails.
       // error is a Parse.Error with an error code and message.
-      alert('Failed to create new object, with error code: ' + error.message);
+      // alert('Failed to create new object, with error code: ' + error.message);
     }
   });
+  window.open ('index.html','_self',false)
+
 }
 
 function getCategoryPointer(category) {
