@@ -143,6 +143,10 @@ function appendComplaints() {
 
   });
 
+  $("#reset").on("click",function(){
+    
+  window.open ('index.html','_self',false)
+  });
 
 
 }
