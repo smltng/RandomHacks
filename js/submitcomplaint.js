@@ -44,6 +44,8 @@ function submitComplaint() {
       // alert('Failed to create new object, with error code: ' + error.message);
     }
   });
+  window.open ('index.html','_self',false)
+
 }
 
 function getCategoryPointer(category) {

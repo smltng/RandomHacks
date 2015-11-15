@@ -20,23 +20,26 @@ function appendComplaints() {
         var object = results[i];
         var objectId = ''+object.id;
         
+        console.log(object.createdAt);
         var strDate = '' + object.createdAt;
         var arrDate = strDate.split(' ');
         var month = arrDate[1];
         var date = arrDate[2];
         var year = arrDate[3];
-		var subject;
-		if (object.get('subject').length > 60){
-			subject = object.get('subject').substring(0,60) + '...'; 
-		}else{
-			subject = object.get('subject');
-		}
-		var description;
-		if (object.get('description').length > 60){
-			description = object.get('description').substring(0,60) + '...'; 
-		}else{
-			description = object.get('description');
-		}
+    		var hour = arrDate[4];
+
+        var subject;
+    		if (object.get('subject').length > 60){
+    			subject = object.get('subject').substring(0,60) + '...'; 
+    		}else{
+    			subject = object.get('subject');
+    		}
+    		var description;
+    		if (object.get('description').length > 60){
+    			description = object.get('description').substring(0,60) + '...'; 
+    		}else{
+    			description = object.get('description');
+    		}
 		
         // create complaint DOM 
         listContainer.prepend(
@@ -46,7 +49,7 @@ function appendComplaints() {
               '<p>' + description + '</p>' +
             '</div>' +
             '<div class = "complaint-right">' +
-              '<p>Submitted on: ' + month + ' ' + date + ', ' + year +
+              '<p>' + month + ' ' + date + ', ' + year + ' at ' + hour +
               '<br>Status: ' + object.get('status') + '</p>' +
             '</div>' +
           '</div>'
