@@ -2,9 +2,9 @@
 	width:1000px;
 	margin-left:auto;
 	margin-right:auto;
+	margin-top:60px;
 }
-#mainFeed{
-}
+
 #filters{
 	height:300px;
 	background-color:#F2F2F2;
@@ -23,10 +23,13 @@
 
 .container-fluid:first-child{
 	background-color:#B31B1B;
+	height:60px;
 }
 
 .navbar-default .navbar-brand{
 	color:whitesmoke;
+	font-size:x-large;
+	margin-top:5px;
 }
 
 .navbar-default .navbar-brand:hover{
@@ -35,6 +38,8 @@
 
 .navbar-default .navbar-nav>li>a{
 	color:whitesmoke;
+	font-size:large;
+	margin-top:5px;
 }
 
 .navbar-default .navbar-nav>li>a:hover{
