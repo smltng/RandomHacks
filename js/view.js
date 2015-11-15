@@ -2,7 +2,23 @@ $(document).ready(function() {
   Parse.initialize("z9ajnPiKmHIXc05vn7bojsGlH1gRVBIElbF0XcgU", "s8EsAA7ZNUab0UYTCYDOP20LylqYaKeaTyAFdsKm");
   
   fetchComplaintData();
+  
  });
+
+
+function submitNewComment(complaint){
+  var comment_text = $('#comment').val();
+  var Comment = Parse.Object.extend("Comment");
+  var comment_obj = new Comment();
+  comment_obj.set('complaintId', complaint);
+
+  var user = new Parse.User();
+  user.id = "srd83";
+  comment_obj.set('commenterId', user);
+  comment_obj.set('Content',comment_text);
+
+  comment_obj.save();
+}
 
 function fetchComplaintData(){
 	var url=window.location.search;
@@ -18,6 +34,9 @@ function fetchComplaintData(){
 
       retrieveVoteData(complaint);
       retrieveCommentData(complaint);
+      $('#submit').on('click', function() {
+        submitNewComment(complaint);
+      });
 		},
 
 		error: function(error) {
