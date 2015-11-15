@@ -19,15 +19,14 @@ function appendComplaints() {
       for (var i=0; i < results.length; i++) {
         var object = results[i];
         var objectId = ''+object.id;
-        
-        console.log(object.createdAt);
+      
         var strDate = '' + object.createdAt;
         var arrDate = strDate.split(' ');
         var month = arrDate[1];
         var date = arrDate[2];
         var year = arrDate[3];
     		var hour = arrDate[4];
-        console.log(object);
+        
         var subject;
     		if (object.get('subject').length > 35){
     			subject = object.get('subject').substring(0,35) + '...'; 
