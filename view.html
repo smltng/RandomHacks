@@ -41,7 +41,7 @@
 
   <div id="main" class="container-fluid">
 
-   <div id="row">
+   <div class="row">
 
     <div class="col-md-2"></div>
     
@@ -51,50 +51,46 @@
 
  </div>
 
- <div id="row">
+ <div class="row">
    <div class="col-md-2">
-     <button type="button" 
-     id="votes" 
-     class="btn btn-success glyphicon glyphicon-thumbs-up" 
-     data-loading-text=" ... ">
-     0</button></div>
-     <div class="col-md-8" id="description">Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. </div>
-     <div class="col-md-2" id="status">Pending</div>
+      <button type="button" id="votes" class="btn btn-success glyphicon glyphicon-thumbs-up" data-loading-text=" ... ">
+        0
+      </button>
+    </div>
+     <div class="col-md-8" id="description"></div>
+     <div class="col-md-2" id="status"></div>
    </div>
 
    <div class="clearfix"></div>
    
-   <div id="row" style="margin-top:10px;">
+   <div class="row" style="margin-top:10px;">
     <div class="col-md-2">
     </div>
-    <div id="tags" class="col-md-10">
-      Sample Tags
-    </div>
+    <div id="tags" class="col-md-10"></div>
   </div>
   <div class="clearfix"></div>
-  <div id="row">
+  <div class="row">
     <hr>
   </div>
-  <div id="row">
-    <div class="col-md-2">Answer by: netID</div>
-    <div class="col-md-10">
-      Student Assembly Answer:<br>
-      <div id="SAAnswer">Sample Answer</div>
-    </div>
+  
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">Student Assembly Answer:</div>
   </div>
+  <div id="sa-answer-list"></div>
+  
   <div class="clearfix"></div>
-  <div id="row">
+  <div class="row">
     <hr>
   </div>
-  <div id="row">
+  
+  <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-10">Student Comments</div>
   </div>
-  <div id="row">
-    <div class="col-md-2">Comment by: netID</div>
-    <div class="col-md-10">This is a comment.</div>
-  </div>
-  <div id="row">
+  <div id="student-comment-list"></div>
+
+  <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-10">
     <form>
