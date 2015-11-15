@@ -49,9 +49,9 @@ function appendComplaints() {
               '<p>' + description + '</p>' +
             '</div>' +
             '<div class = "complaint-right">' +
-              '<p>' + month + ' ' + date + ', ' + year + ' at ' + hour +
-              '<br>Status: ' + object.get('status') +
-              '<br>Category:' + object.get('label') + '</p>' +
+              '<p>' + month + ' ' + date + ', ' + year +
+              '<br>' + object.get('status') +
+              '<br>' + object.get('label') + '</p>' +
             '</div>' +
           '</div>'
         ); 

@@ -58,6 +58,7 @@
 .complaint-right{
 	width:200px;
 	float:right;
+	text-align: right;
 }
 #logo{
 	padding-top:0px;
