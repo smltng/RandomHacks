@@ -69,17 +69,21 @@ nav.navbar.navbar-default.navbar-fixed-top{
 
 .complaint{
 	border-bottom:1px solid #F2F2F2;
-	height:65px;
+	height:80px;
 	margin:5px;
 }
 .complaint-left{
 	/*width:400px;*/
+	height: 80px;
 	float:left;
+	vertical-align: center;
 }
 .complaint-right{
 	/*width:100px;*/
 	float:right;
 	text-align: right;
+	height:80px;
+	vertical-align:center;
 }
 #logo{
 	padding-top:0px;
