@@ -27,7 +27,7 @@ function appendComplaints() {
         var date = arrDate[2];
         var year = arrDate[3];
     		var hour = arrDate[4];
-
+        console.log(object);
         var subject;
     		if (object.get('subject').length > 35){
     			subject = object.get('subject').substring(0,35) + '...'; 
@@ -50,7 +50,8 @@ function appendComplaints() {
             '</div>' +
             '<div class = "complaint-right">' +
               '<p>' + month + ' ' + date + ', ' + year + ' at ' + hour +
-              '<br>Status: ' + object.get('status') + '</p>' +
+              '<br>Status: ' + object.get('status') +
+              '<br>Category:' + object.get('label') + '</p>' +
             '</div>' +
           '</div>'
         ); 
