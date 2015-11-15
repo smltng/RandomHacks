@@ -103,9 +103,9 @@ function appendComplaints() {
       for( var i =0; i<pendArr.length; i++){
         // console.log($(catArr[i]).text());
         if($(pendArr[i]).text()==="In Progress" && $(catArr[i]).text()!=strCat){
-          console.log("STRINGS");
-          console.log($(catArr[i]).text());
-          console.log(strCat);
+          // console.log("STRINGS");
+          // console.log($(catArr[i]).text());
+          // console.log(strCat);
           $(pendArr[i]).closest(".complaint").hide();
         }
       }
@@ -115,7 +115,7 @@ function appendComplaints() {
       var catArr = $(".currentCat");
       for( var i =0; i<pendArr.length; i++){
         // console.log($(pendArr[i]).text());
-        if($(pendArr[i]).text()==="Resolved" && $(catArr[i].text()!=strCat)){
+        if($(pendArr[i]).text()==="Resolved" && $((catArr[i]).text()!=strCat)){
           $(pendArr[i]).closest(".complaint").hide();
 
         }
@@ -123,22 +123,33 @@ function appendComplaints() {
     }
     if(!p){
       var pendArr = $(".status");
-      var catArr = $(".currentCat")
+      var catArr = $(".currentCat");
       for( var i =0; i<pendArr.length; i++){
         // console.log($(pendArr[i]).text());
-        if($(pendArr[i]).text()==="Pending" && $(catArr[i].text()!=strCat)){
+        if($(pendArr[i]).text()==="Pending"){
+          if($(catArr[i]).text()===strCat||strCat==="Select"){
+            $(pendArr[i]).closest(".complaint").show();
+          }else{
+            $(pendArr[i]).closest(".complaint").hide();
+          }
+        }else if($(pendArr[i]).text()==="Pending"){
           $(pendArr[i]).closest(".complaint").show();
-
         }
       }
     }
     if(!i){
       var pendArr = $(".status");
+      var catArr = $(".currentCat");
       for( var i =0; i<pendArr.length; i++){
         // console.log($(pendArr[i]).text());
         if($(pendArr[i]).text()==="In Progress"){
+          if($(catArr[i]).text()===strCat||strCat==="Select"){
+            $(pendArr[i]).closest(".complaint").show();
+          }else{
+            $(pendArr[i]).closest(".complaint").hide();
+          }
+        }else if($(pendArr[i]).text()==="In Progress"){
           $(pendArr[i]).closest(".complaint").show();
-
         }
       }
     }
@@ -147,8 +158,13 @@ function appendComplaints() {
       for( var i =0; i<pendArr.length; i++){
         console.log($(pendArr[i]).text());
         if($(pendArr[i]).text()==="Resolved"){
+          if($(catArr[i]).text()===strCat||strCat==="Select"){
+            $(pendArr[i]).closest(".complaint").show();
+          }else{
+            $(pendArr[i]).closest(".complaint").hide();
+          }
+        }else if($(pendArr[i]).text()==="Resolved"){
           $(pendArr[i]).closest(".complaint").show();
-
         }
       }
     }
