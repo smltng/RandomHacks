@@ -35,7 +35,7 @@
 }
 
 .complaint{
-	border-bottom:1px solid gray;
+	border-bottom:1px solid #F2F2F2;
 	height:50px;
 }
 .complaint-left{
@@ -49,4 +49,16 @@
 #logo{
 	padding-top:0px;
 	margin-top:0px;
+}
+
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 0;
 }

@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.js"></script>
+  <script src="https://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
 </head>
 <body>
 
@@ -14,13 +15,18 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
+	    <a href="index.html">
+		  <img src="img/cornell-logo-small.jpg" alt="Cornell University " id="logo" style="margin-top:0px">
+		</a>
+	  </div>
+	  <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Big Red Board</a>
+        <a class="navbar-brand" href="index.html"> &nbsp; Big Red Board</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,20 +58,51 @@
      class="btn btn-success glyphicon glyphicon-thumbs-up" 
      data-loading-text=" ... ">
      0</button></div>
-     <div class="col-md-8" id="subject">Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. </div>
+     <div class="col-md-8" id="description">Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. Test Description and some other lorem ipsum stuff. </div>
      <div class="col-md-2" id="status">Pending</div>
    </div>
+
+   <div class="clearfix"></div>
    
-   <div id="row">
+   <div id="row" style="margin-top:10px;">
     <div class="col-md-2">
     </div>
     <div id="tags" class="col-md-10">
       Sample Tags
     </div>
   </div>
+  <div class="clearfix"></div>
+  <div id="row">
+    <hr>
+  </div>
+  <div id="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+      Student Assembly Answer:<br>
+      <div id="SAAnswer">Sample Answer</div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div id="row">
+    <hr>
+  </div>
+  <div id="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">Student Comments</div>
+  </div>
+  <div id="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+    <form>
+      Add Comment:
+      <textarea id="description"></textarea>
+      <input id="submit" type="submit" value="Submit"></input>
 
+    </form>
+  </div>
+  </div>
 
-
+  <script type="text/javascript" src="js/view.js"></script>
 </body>
 </html>
 

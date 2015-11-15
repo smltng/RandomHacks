@@ -6,8 +6,7 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.js"></script>
-  
-  <script src="https://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
+	<script src="https://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
 </head>
 <body>
 	
@@ -15,8 +14,10 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <img src="img/cornell-logo-small.jpg" alt="Cornell University " id="logo" style="margin-top:0px">
-    </div>
+      <a href="index.html">
+	    <img src="img/cornell-logo-small.jpg" alt="Cornell University " id="logo" style="margin-top:0px">
+	  </a>
+	</div>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -54,6 +55,28 @@
 					</div>
 					<button type="submit" class="btn btn-default">Search</button>
 				</form>
+				<p>Select Filters</p>
+				  Category:<br />
+				  <select id="category">
+					<option value="Dining">Dining</option>
+					<option value="Environmental Policy and Learning">Environmental Policy and Learning</option>
+					<option value="Diversity">Diversity</option>
+					<option value="Communications and Outreach">Communications and Outreach</option>
+					<option value="Appropriations">Appropriations</option>
+					<option value="Financial Aid">Financial Aid</option>
+					<option value="Technology">Technology</option>
+					<option value="Residential Life">Residential Life</option>
+					<option value="Student Assembly Infrastructure Fund">Student Assembly Infrastructure Fund</option>
+					<option value="Health and Wellness">Health and Wellness</option>
+					<option value="City/Local Affairs">City/Local Affairs</option>
+					<option value="Academic Policy">Academic Policy</option>
+					<option value="Elections">Elections</option>
+					<option value="Other">Other</option>
+				  </select>
+				  <input type="checkbox" name="anon" value="anon" id="anon"> &nbsp; Pending<br />
+				  <input type="checkbox" name="anon" value="anon" id="anon"> &nbsp; In Progress<br />
+				  <input type="checkbox" name="anon" value="anon" id="anon"> &nbsp; Resolved<br />
+				  <button id="filtersubmit" >Filter</button>
 			</div>
 		</div>
 	</div>
