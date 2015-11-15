@@ -17,6 +17,12 @@ function submitComplaint() {
   var desc = $('#description').val();
   var isAnonymous = $('#anon').is(':checked');
   
+  //check
+  if(subject.length<1 || desc.length<1){
+    alert("Error. Subject and Description are required texts.");
+    return false;
+  }
+
   var Complaint = Parse.Object.extend('Complaint');
   var complaintObj = new Complaint();
 
