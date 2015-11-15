@@ -17,7 +17,17 @@ function submitNewComment(complaint){
   comment_obj.set('commenterId', user);
   comment_obj.set('Content',comment_text);
 
-  comment_obj.save();
+  //alert(window.location.href + '?id=' + complaint.id);
+  comment_obj.save(null, {
+    success: function(comment_obj) {
+
+      window.location.href = jQuery.query.set('id', ''+complaint.id);
+
+    }
+
+
+
+  });
 }
 
 function fetchComplaintData(){
@@ -36,6 +46,7 @@ function fetchComplaintData(){
       retrieveCommentData(complaint);
       $('#submit').on('click', function() {
         submitNewComment(complaint);
+
       });
 		},
 
