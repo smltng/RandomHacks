@@ -17,6 +17,12 @@ function submitComplaint() {
   var desc = $('#description').val();
   var isAnonymous = $('#anon').is(':checked');
   
+  //check
+  if(subject.length<1 || desc.length<1){
+    alert("Error. Please fill out all the forms completely.");
+    return false;
+  }
+
   var Complaint = Parse.Object.extend('Complaint');
   var complaintObj = new Complaint();
 
