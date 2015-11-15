@@ -30,7 +30,7 @@ function appendComplaints() {
           '<div class="complaint">' +
             '<div class = "complaint-left">' +
               '<a href="view.html" data-id="' +object.id+ '">' + object.get('subject') + '</a>' +
-              '<p>' + object.get('description') + '</p>' +
+              '<p>' + object.get('description').substring(0,60) + '...</p>' +
             '</div>' +
             '<div class = "complaint-right">' +
               '<p>Submitted on: ' + month + ' ' + date + ', ' + year +
