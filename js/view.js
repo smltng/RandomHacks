@@ -2,7 +2,7 @@ $(document).ready(function() {
   Parse.initialize("z9ajnPiKmHIXc05vn7bojsGlH1gRVBIElbF0XcgU", "s8EsAA7ZNUab0UYTCYDOP20LylqYaKeaTyAFdsKm");
   
   fetchComplaintData();
-  
+
  });
 
 
@@ -44,8 +44,8 @@ function fetchComplaintData(){
 
       retrieveVoteData(complaint);
       retrieveCommentData(complaint);
-      $('#submit').on('click', function() {
-        submitNewComment(complaint);
+      $('#adminDel').on('click', function(complaint) {
+        deleteComplaint(complaint);
 
       });
 		},
@@ -124,6 +124,7 @@ function upVote(VoteUser, complaint) {
 function setTagValue(idDom, complaint) {
   var Label = Parse.Object.extend('Label');
   var qLabel = new Parse.Query(Label);
+  console.log(complaint.get("category").id);
   qLabel.get('' + complaint.get("category").id, {
     success: function(result) {
       $(idDom).html( '<strong>Category: </strong>' + result.get('name') );
@@ -160,6 +161,18 @@ function appendComment(comment) {
     },
     error: function(user) {
       alert('Failed to create new object, with error code: ' + error.message);
+    }
+  });
+}
+
+function deleteComplaint(complaint){
+  var qUser = new Parse.Query(Parse.User);
+  qUser.get(complaint.get('complaintId').id,{
+    success: function(complaint){
+      complaint.destroy({});
+    },
+    error: function(object, error){
+      //error
     }
   });
 }

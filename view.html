@@ -16,92 +16,78 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-	    <a href="index.html">
-		  <img src="img/cornell-logo-small.jpg" alt="Cornell University " style="margin-top:5px;" id="logo" style="margin-top:0px">
-		</a>
-	  </div>
-	  <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html"> &nbsp; Big Red Board</a>
-      </div>
+       <a href="index.html">
+        <img src="img/cornell-logo-small.jpg" alt="Cornell University " style="margin-top:5px;" id="logo" style="margin-top:0px">
+      </a>
+    </div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> &nbsp; Big Red Board</a>
+    </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.html">Back</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#myModal2">About</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Back</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#myModal2">About</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-  <div id="main" class="container-fluid">
-
-   <div class="row">
-
-    <div class="col-md-2"></div>
-    
-    <div class="col-md-10">
-     <h3 id="subject">Test Subject</h3>
-   </div>
-
- </div>
+<div id="main" class="container-fluid">
 
  <div class="row">
-   <div class="col-md-2">
-      <button type="button" id="votes" class="btn btn-success glyphicon glyphicon-thumbs-up" data-loading-text=" ... ">
-        0
-      </button>
-    </div>
-     <div class="col-md-8" id="description"></div>
-     <div class="col-md-2" id="status"></div>
-   </div>
 
-   <div class="clearfix"></div>
-   
-   <div class="row" style="margin-top:10px;">
-    <div class="col-md-2">
-    </div>
-    <div id="tags" class="col-md-10"></div>
-  </div>
-  <div class="clearfix"></div>
-  <div class="row">
-    <hr>
-  </div>
-  
-<!--   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-10">Student Assembly Answer:</div>
-  </div> -->
-  <!-- <div id="sa-answer-list"></div> -->
-  
-  <div class="clearfix"></div>
-  <!-- <div class="row"> -->
-    <!-- <hr> -->
-  <!-- </div> -->
-  
-  <div class="row">
-    <!-- <div class="col-md-2"></div>
-    <div class="col-md-10">Student Comments</div>
-  </div>
-  <div id="student-comment-list"></div>
+  <div class="col-md-2"></div>
 
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-10">
-    <form>
-      Add Comment:
-      <textarea id="comment"></textarea>
-      <input id="submit" type="submit" value="Submit"></input>
+  <div class="col-md-10">
+   <h3 id="subject">Test Subject</h3>
+ </div>
 
-    </form> -->
-    <div id="disqus_thread"></div>
-<script>
+</div>
+
+<div class="row">
+ <div class="col-md-2">
+  <button type="button" id="votes" class="btn btn-success glyphicon glyphicon-thumbs-up" data-loading-text=" ... ">
+    0
+  </button>
+  <br><br>
+<br>Status<br>
+  <input type="radio" value="Pending" id="PendChange">&nbsp;Pending<br>
+  <input type="radio" value="In Progress" id="InChange">&nbsp;In Progress<br>
+  <input type="radio" value="Resolved" id="ResChange">&nbsp;Resolved<br><br>
+  <button id="updateChange">Update Status</button><br><br>
+<button id="adminDel">Delete</button><br>
+</div>
+<div class="col-md-8" id="description"></div>
+<div class="col-md-2" id="status"></div>
+
+</div>
+
+<div class="clearfix"></div>
+
+<div class="row" style="margin-top:10px;">
+  <div class="col-md-2">
+  </div>
+  <div id="tags" class="col-md-10"></div>
+</div>
+<div class="clearfix"></div>
+<div class="row">
+  <hr>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="row">
+
+  <div id="disqus_thread"></div>
+  <script>
 /**
 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
@@ -113,18 +99,18 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
 };
 */
 (function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
+  var d = document, s = d.createElement('script');
 
-s.src = '//hackathonsite.disqus.com/embed.js';
+  s.src = '//hackathonsite.disqus.com/embed.js';
 
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-  </div>
-  </div>
-  
+</div>
+</div>
+
 
 <!-- Modal About -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -135,9 +121,12 @@ s.setAttribute('data-timestamp', +new Date());
         <h4 class="modal-title" id="myModalLabel">About the Big Red Board</h4>
       </div>
       <div class="modal-body">
-		<p>Want to make Cornell a even better place? Want to make your voice heard?
-Welcome to the Student Assembly at Cornell University! This website is an effort to help Cornell students’ voice to be heard. Any Cornell student have the right to express their concerns. Through posting on this board, your concerns will be received by a Student Assembly representative, Student Government, and eventually Cornell Administration.
-</p>
+ <p>Want to make Cornell a even better place? Want to make your voice heard?
+ This website is an effort to help Cornell students voice their concerns.
+ Any Cornell student has the right to express their ideas and complaints. By posting
+ on this board, your concerns will be received and acted upon by a Student
+ Assembly representative.
+ </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
