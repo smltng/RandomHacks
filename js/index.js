@@ -44,16 +44,17 @@ function appendComplaints() {
         listContainer.prepend(
           '<div class="complaint">' +
             '<div class = "complaint-left">' +
+              '<button id=' +objectId+ ' type="button" class="votes btn btn-success glyphicon glyphicon-thumbs-up">0</button>' +
               '<a href="view.html" data-id="' +objectId+ '">' + subject + '</a>' +
               '<p>' + description + '</p>' +
             '</div>' +
             '<div class = "complaint-right">' +
               '<p>' + month + ' ' + date + ', ' + year +
-              '<br>' + object.get('status') +
+              '<br><span class="status">' + object.get('status') + '</span>' +
               '<br>' + object.get('label') + '</p>' +
             '</div>' +
           '</div>'
-        ); 
+        );
         
         // add complaint-id to the complain's view URL
         $('a[data-id="' +objectId+ '"]').on('click', function() {
@@ -61,9 +62,32 @@ function appendComplaints() {
           return false;
         });
       }
+      // add votes
+      addVotes();
     },
     error: function(error) {
       alert("Error: " + error.code + " " + error.message);
     }
   });
+}
+
+function addVotes() {
+  var arrThumbs = $('button.votes');
+  
+  var VoteUser = Parse.Object.extend("VoteUser");
+  
+  for (var i=0; i<arrThumbs.length; i++) {
+    var thumb = $(arrThumbs[i]);
+    complaintId = thumb.attr('id');
+    
+    var query = new Parse.Query(VoteUser);
+    var complaint = new Parse.Object.extend('Complaint');
+    complaint.id = complaintId;
+    query.equalTo('complaintId', complaint);
+    query.find({
+      success: function(results) {
+        thumb.text( results.length );
+      }
+    });
+  }
 }
