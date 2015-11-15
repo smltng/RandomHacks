@@ -25,8 +25,10 @@ function appendComplaints() {
         var month = arrDate[1];
         var date = arrDate[2];
         var year = arrDate[3];
-    		var hour = arrDate[4];
-        
+    		var time = arrDate[4];
+        var arrhour = time.split(':');
+        var hour = arrhour[0] + ':' + arrhour[1];
+
         var subject;
     		if (object.get('subject').length > 35){
     			subject = object.get('subject').substring(0,35) + '...'; 
@@ -42,15 +44,15 @@ function appendComplaints() {
 		
         // create complaint DOM 
         listContainer.prepend(
-          '<div class="complaint">' +
-            '<div class = "complaint-left">' +
-              '<button id=' +objectId+ ' type="button" class="votes btn btn-success glyphicon glyphicon-thumbs-up">0</button>' +
+          '<div class="complaint row">' +
+            '<div class="complaint-left col-sm-9">' +
+              '<button id=' +objectId+ ' type="button" class="votes btn btn-success glyphicon glyphicon-thumbs-up">' +object.get('vote')+ '</button>' +
               '<a href="view.html" data-id="' +objectId+ '">' + subject + '</a>' +
-              '<p>' + description + '</p>' +
+              '<p class="complaint-desc">' + description + '</p>' +
             '</div>' +
-            '<div class = "complaint-right">' +
-              '<p>' + month + ' ' + date + ', ' + year +
-              '<br><span class="status">' + object.get('status') + '</span>' +
+            '<div class = "complaint-right col-sm-3">' +
+              '<p>' + month + ' ' + date + ', at ' + hour +
+              '<br><em><span class="status">' + object.get('status') + '</span></em>' +
               '<br>' + object.get('label') + '</p>' +
             '</div>' +
           '</div>'
@@ -62,32 +64,92 @@ function appendComplaints() {
           return false;
         });
       }
-      // add votes
-      addVotes();
     },
     error: function(error) {
       alert("Error: " + error.code + " " + error.message);
     }
   });
-}
 
-function addVotes() {
-  var arrThumbs = $('button.votes');
-  
-  var VoteUser = Parse.Object.extend("VoteUser");
-  
-  for (var i=0; i<arrThumbs.length; i++) {
-    var thumb = $(arrThumbs[i]);
-    complaintId = thumb.attr('id');
-    
-    var query = new Parse.Query(VoteUser);
-    var complaint = new Parse.Object.extend('Complaint');
-    complaint.id = complaintId;
-    query.equalTo('complaintId', complaint);
-    query.find({
-      success: function(results) {
-        thumb.text( results.length );
+  $("#filtersubmit").on('click',function(){
+    var p=true;
+    var i=true;
+    var r=true;
+    if(document.getElementById("pending").checked){
+      p=false;
+    }
+    if(document.getElementById("inprogress").checked){
+      i=false;
+    }
+    if(document.getElementById("resolved").checked){
+      r=false;
+    }
+    if(p){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Pending"){
+          $(pendArr[i]).closest(".complaint").hide();
+
+        }
       }
-    });
-  }
+    }
+    if(i){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="In Progress"){
+          $(pendArr[i]).closest(".complaint").hide();
+
+        }
+      }
+    }
+    if(r){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Resolved"){
+          $(pendArr[i]).closest(".complaint").hide();
+
+        }
+      }
+    }
+    if(!p){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Pending"){
+          $(pendArr[i]).closest(".complaint").show();
+
+        }
+      }
+    }
+    if(!i){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="In Progress"){
+          $(pendArr[i]).closest(".complaint").show();
+
+        }
+      }
+    }
+    if(!r){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Resolved"){
+          $(pendArr[i]).closest(".complaint").show();
+
+        }
+      }
+    }
+
+  });
+
+  $("#reset").on("click",function(){
+    
+  window.open ('index.html','_self',false)
+  });
+
+
 }

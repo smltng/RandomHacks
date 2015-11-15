@@ -104,9 +104,9 @@ function upVote(VoteUser, complaint) {
   vote.set('userId', user);
   vote.set('complaintId', complaint);
 
+  var currNum = parseInt( $('#votes').text() );
   vote.save(null, {
     success: function(vote) {
-      var currNum = parseInt( $('#votes').text() );
       $('#votes').text(currNum+1);
     },
     error: function(vote, error) {
@@ -115,6 +115,10 @@ function upVote(VoteUser, complaint) {
       alert('Failed to create new object, with error code: ' + error.message);
     }
   });
+
+
+  complaint.set('vote', currNum+1);
+  complaint.save();
 }
 
 function setTagValue(idDom, complaint) {
@@ -122,7 +126,7 @@ function setTagValue(idDom, complaint) {
   var qLabel = new Parse.Query(Label);
   qLabel.get('' + complaint.get("category").id, {
     success: function(result) {
-      $(idDom).text( result.get('name') );
+      $(idDom).html( '<strong>Category: </strong>' + result.get('name') );
     },
     error: function(error) {
       alert('Failed to retrieve tag name');

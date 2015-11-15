@@ -22,8 +22,9 @@ nav.navbar.navbar-default.navbar-fixed-top{
 }
 #description{
 	width: 500px;
-	height: 200px;
-	resize:none;
+	/*height: 200px;*/
+	/*resize:none;*/
+  overflow: auto;
 }
 #slogan{
 	font-size: large;
@@ -38,7 +39,7 @@ nav.navbar.navbar-default.navbar-fixed-top{
 	font-size:18px;
 }
 #filtersubmit{
-	margin-left:100px;
+	margin-left:80px;
 }
 
 .container-fluid:first-child{
@@ -72,11 +73,11 @@ nav.navbar.navbar-default.navbar-fixed-top{
 	margin:5px;
 }
 .complaint-left{
-	width:400px;
+	/*width:400px;*/
 	float:left;
 }
 .complaint-right{
-	width:100px;
+	/*width:100px;*/
 	float:right;
 	text-align: right;
 }
@@ -98,9 +99,22 @@ hr {
 }
 
 .complaint-left > a{
-	font-size:20px;
+	font-size:16px;
 }
 
 .complaint-right > p{
 	font-size:12px;
+}
+
+.complaint {
+  margin-left: -50px;
+}
+
+.votes {
+  margin-right: 15px;
+}
+
+.complaint-desc {
+  font-size: 12px; 
+  margin-left: 65px;
 }
