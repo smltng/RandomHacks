@@ -53,7 +53,7 @@ function appendComplaints() {
             '<div class = "complaint-right col-sm-3">' +
               '<p>' + month + ' ' + date + ', at ' + hour +
               '<br><em><span class="status">' + object.get('status') + '</span></em>' +
-              '<br>' + object.get('label') + '</p>' +
+              '<br><em><span class="currentCat">' + object.get('label') + '</span></p>' +
             '</div>' +
           '</div>'
         );
@@ -71,6 +71,9 @@ function appendComplaints() {
   });
 
   $("#filtersubmit").on('click',function(){
+    var e = document.getElementById("filter-category");
+    var strCat = e.options[e.selectedIndex].value;
+
     var p=true;
     var i=true;
     var r=true;
@@ -85,9 +88,10 @@ function appendComplaints() {
     }
     if(p){
       var pendArr = $(".status");
+      var catArr = $(".currentCat");
       for( var i =0; i<pendArr.length; i++){
-        console.log($(pendArr[i]).text());
-        if($(pendArr[i]).text()==="Pending"){
+        // console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Pending" && $(catArr[i]).text()!=strCat){
           $(pendArr[i]).closest(".complaint").hide();
 
         }
@@ -95,19 +99,23 @@ function appendComplaints() {
     }
     if(i){
       var pendArr = $(".status");
+      var catArr = $(".currentCat");
       for( var i =0; i<pendArr.length; i++){
-        console.log($(pendArr[i]).text());
-        if($(pendArr[i]).text()==="In Progress"){
+        // console.log($(catArr[i]).text());
+        if($(pendArr[i]).text()==="In Progress" && $(catArr[i]).text()!=strCat){
+          console.log("STRINGS");
+          console.log($(catArr[i]).text());
+          console.log(strCat);
           $(pendArr[i]).closest(".complaint").hide();
-
         }
       }
     }
     if(r){
       var pendArr = $(".status");
+      var catArr = $(".currentCat");
       for( var i =0; i<pendArr.length; i++){
-        console.log($(pendArr[i]).text());
-        if($(pendArr[i]).text()==="Resolved"){
+        // console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Resolved" && $(catArr[i].text()!=strCat)){
           $(pendArr[i]).closest(".complaint").hide();
 
         }
@@ -115,9 +123,10 @@ function appendComplaints() {
     }
     if(!p){
       var pendArr = $(".status");
+      var catArr = $(".currentCat")
       for( var i =0; i<pendArr.length; i++){
-        console.log($(pendArr[i]).text());
-        if($(pendArr[i]).text()==="Pending"){
+        // console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Pending" && $(catArr[i].text()!=strCat)){
           $(pendArr[i]).closest(".complaint").show();
 
         }
@@ -126,7 +135,7 @@ function appendComplaints() {
     if(!i){
       var pendArr = $(".status");
       for( var i =0; i<pendArr.length; i++){
-        console.log($(pendArr[i]).text());
+        // console.log($(pendArr[i]).text());
         if($(pendArr[i]).text()==="In Progress"){
           $(pendArr[i]).closest(".complaint").show();
 
