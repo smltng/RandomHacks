@@ -39,7 +39,7 @@ function appendComplaints() {
 		}
 		
         // create complaint DOM 
-        listContainer.append(
+        listContainer.prepend(
           '<div class="complaint">' +
             '<div class = "complaint-left">' +
               '<a href="view.html" data-id="' +objectId+ '">' + subject + '</a>' +
