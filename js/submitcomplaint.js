@@ -19,7 +19,7 @@ function submitComplaint() {
   
   //check
   if(subject.length<1 || desc.length<1){
-    alert("Error. Please fill out all the forms completely.");
+    alert("Error. Subject and Description are required texts.");
     return false;
   }
 
