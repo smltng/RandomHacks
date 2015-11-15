@@ -91,9 +91,8 @@ function appendComplaints() {
       var catArr = $(".currentCat");
       for( var i =0; i<pendArr.length; i++){
         // console.log($(pendArr[i]).text());
-        if($(pendArr[i]).text()==="Pending" && $(catArr[i]).text()!=strCat){
+        if($(pendArr[i]).text()==="Pending"){
           $(pendArr[i]).closest(".complaint").hide();
-
         }
       }
     }
@@ -102,7 +101,7 @@ function appendComplaints() {
       var catArr = $(".currentCat");
       for( var i =0; i<pendArr.length; i++){
         // console.log($(catArr[i]).text());
-        if($(pendArr[i]).text()==="In Progress" && $(catArr[i]).text()!=strCat){
+        if($(pendArr[i]).text()==="In Progress"){
           // console.log("STRINGS");
           // console.log($(catArr[i]).text());
           // console.log(strCat);
@@ -115,7 +114,7 @@ function appendComplaints() {
       var catArr = $(".currentCat");
       for( var i =0; i<pendArr.length; i++){
         // console.log($(pendArr[i]).text());
-        if($(pendArr[i]).text()==="Resolved" && $((catArr[i]).text()!=strCat)){
+        if($(pendArr[i]).text()==="Resolved"){
           $(pendArr[i]).closest(".complaint").hide();
 
         }
