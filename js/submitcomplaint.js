@@ -27,7 +27,7 @@ function submitComplaint() {
   var complaintObj = new Complaint();
 
   complaintObj.set('subject', subject);
-  //complaintObj.set('category', getCategoryPointer(category));
+  complaintObj.set('category', getCategoryPointer(category));
   complaintObj.set('label', category);
   complaintObj.set('description', desc);
   complaintObj.set('isAnonymous', isAnonymous);
