@@ -49,7 +49,7 @@ function appendComplaints() {
             '</div>' +
             '<div class = "complaint-right">' +
               '<p>' + month + ' ' + date + ', ' + year +
-              '<br>' + object.get('status') +
+              '<br><span class="status">' + object.get('status') + '</span>' +
               '<br>' + object.get('label') + '</p>' +
             '</div>' +
           '</div>'
@@ -66,4 +66,84 @@ function appendComplaints() {
       alert("Error: " + error.code + " " + error.message);
     }
   });
+
+  $("#filtersubmit").on('click',function(){
+    var p=true;
+    var i=true;
+    var r=true;
+    if(document.getElementById("pending").checked){
+      p=false;
+    }
+    if(document.getElementById("inprogress").checked){
+      i=false;
+    }
+    if(document.getElementById("resolved").checked){
+      r=false;
+    }
+    if(p){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Pending"){
+          $(pendArr[i]).closest(".complaint").hide();
+
+        }
+      }
+    }
+    if(i){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="In Progress"){
+          $(pendArr[i]).closest(".complaint").hide();
+
+        }
+      }
+    }
+    if(r){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Resolved"){
+          $(pendArr[i]).closest(".complaint").hide();
+
+        }
+      }
+    }
+    if(!p){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Pending"){
+          $(pendArr[i]).closest(".complaint").show();
+
+        }
+      }
+    }
+    if(!i){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="In Progress"){
+          $(pendArr[i]).closest(".complaint").show();
+
+        }
+      }
+    }
+    if(!r){
+      var pendArr = $(".status");
+      for( var i =0; i<pendArr.length; i++){
+        console.log($(pendArr[i]).text());
+        if($(pendArr[i]).text()==="Resolved"){
+          $(pendArr[i]).closest(".complaint").show();
+
+        }
+      }
+    }
+
+  });
+
+
+
 }
+
