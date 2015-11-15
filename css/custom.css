@@ -38,7 +38,8 @@
 
 .complaint{
 	border-bottom:1px solid #F2F2F2;
-	height:50px;
+	height:65px;
+	margin:5px;
 }
 .complaint-left{
 	width:400px;
@@ -63,4 +64,12 @@ hr {
   border-style: solid none;
   border-width: 1px 0;
   margin: 18px 0;
+}
+
+.complaint-left > a{
+	font-size:20px;
+}
+
+.complaint-right > p{
+	font-size:12px;
 }

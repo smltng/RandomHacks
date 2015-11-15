@@ -29,8 +29,8 @@ function appendComplaints() {
     		var hour = arrDate[4];
 
         var subject;
-    		if (object.get('subject').length > 60){
-    			subject = object.get('subject').substring(0,60) + '...'; 
+    		if (object.get('subject').length > 35){
+    			subject = object.get('subject').substring(0,35) + '...'; 
     		}else{
     			subject = object.get('subject');
     		}
