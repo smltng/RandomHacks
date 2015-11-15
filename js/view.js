@@ -2,7 +2,6 @@ $(document).ready(function() {
   Parse.initialize("z9ajnPiKmHIXc05vn7bojsGlH1gRVBIElbF0XcgU", "s8EsAA7ZNUab0UYTCYDOP20LylqYaKeaTyAFdsKm");
   
   fetchComplaintData();
-  
  });
 
 function fetchComplaintData(){
@@ -17,30 +16,51 @@ function fetchComplaintData(){
 			$('#subject').text(complaint.get("subject"));
 			$('#description').text(complaint.get("description"));
 
-      var VoteUser = Parse.Object.extend('VoteUser');
-      var qVoteUser = new Parse.Query(VoteUser);
-      qVoteUser.equalTo('complaintId', complaint);
-      qVoteUser.find({
-        success: function(results) {
-          $('#votes').text(results.length);
-          console.log(results.length);
-
-          //attach the upvote event
-          $('#votes').one('click', function() {
-            if (results.length==0) {
-              upVote(VoteUser, complaint);
-            }
-          });
-        },
-        error: function(error) {
-          console.log(error.message);
-        }
-      });
+      retrieveVoteData(complaint);
+      retrieveCommentData(complaint);
 		},
 
 		error: function(error) {
   		alert("Error: " + error.code + " " + error.message);
   	}
+  });
+}
+
+function retrieveCommentData(complaint) {
+  //get comment data
+  var Comment = Parse.Object.extend('Comment');
+  var qComment = new Parse.Query(Comment);
+  qVoteUser.equalTo('complaintId', complaint);
+  qVoteUser.find({
+    success: function(comments) {
+      
+    },
+    error: function(error) {
+      console.log(error.message);
+    }
+  });
+}
+
+function retrieveVoteData(complaint) {
+  //get vote data
+  var VoteUser = Parse.Object.extend('VoteUser');
+  var qVoteUser = new Parse.Query(VoteUser);
+  qVoteUser.equalTo('complaintId', complaint);
+  qVoteUser.find({
+    success: function(results) {
+      $('#votes').text(results.length);
+      console.log(results.length);
+
+      //attach the upvote event
+      $('#votes').one('click', function() {
+        if (results.length==0) {
+          upVote(VoteUser, complaint);
+        }
+      });
+    },
+    error: function(error) {
+      console.log(error.message);
+    }
   });
 }
 
