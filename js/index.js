@@ -18,6 +18,7 @@ function appendComplaints() {
     success: function(results) {
       for (var i=0; i < results.length; i++) {
         var object = results[i];
+        var objectId = ''+object.id;
         
         var strDate = '' + object.createdAt;
         var arrDate = strDate.split(' ');
@@ -29,7 +30,7 @@ function appendComplaints() {
         listContainer.append(
           '<div class="complaint">' +
             '<div class = "complaint-left">' +
-              '<a href="view.html" data-id="' +object.id+ '">' + object.get('subject') + '</a>' +
+              '<a href="view.html" data-id="' +objectId+ '">' + object.get('subject') + '</a>' +
               '<p>' + object.get('description') + '</p>' +
             '</div>' +
             '<div class = "complaint-right">' +
@@ -40,8 +41,8 @@ function appendComplaints() {
         ); 
         
         // add complaint-id to the complain's view URL
-        $('a[data-id="' +object.id+ '"]').on('click', function() {
-          location.href = this.href + '?id=' + object.id;
+        $('a[data-id="' +objectId+ '"]').on('click', function() {
+          location.href = this.href + '?id=' + $(this).attr('data-id');
           return false;
         });
       }
